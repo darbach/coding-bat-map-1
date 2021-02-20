@@ -100,4 +100,32 @@ class Map1Test {
       assertEquals(actual, expected);
     }
   }
+
+  @Test
+  void topping1() {
+    List<Map<String, String>> topping1Params = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("ice cream", "peanuts")),
+        new HashMap<>(Map.of()),
+        new HashMap<>(Map.of("pancake", "syrup")),
+        new HashMap<>(Map.of("bread", "dirt", "ice cream", "strawberries")),
+        new HashMap<>(Map.of("bread", "jam", "ice cream", "strawberries",
+            "salad", "oil"))
+    ));
+    List<Map<String, String>> topping1Expected = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("bread", "butter", "ice cream", "cherry")),
+        new HashMap<>(Map.of("bread", "butter")),
+        new HashMap<>(Map.of("bread", "butter", "pancake", "syrup")),
+        new HashMap<>(Map.of("bread", "butter", "ice cream", "cherry")),
+        new HashMap<>(Map.of("bread", "butter", "ice cream", "cherry", "salad", "oil"))
+    ));
+    System.out.println("\nRUNNING topping1() TEST...");
+    for (int i = 0; i < topping1Params.size(); i++) {
+      String param = topping1Params.get(i).toString();
+      Map<String, String> expected = topping1Expected.get(i);
+      Map<String, String> actual = map1.topping1(topping1Params.get(i));
+      System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
+          param, expected.toString(), actual.toString());
+      assertEquals(actual, expected);
+    }
+  }
 }
