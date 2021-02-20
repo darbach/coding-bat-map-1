@@ -71,4 +71,33 @@ class Map1Test {
       assertEquals(actual, expected);
     }
   }
+
+  @Test
+  void mapAB() {
+    List<Map<String, String>> mapABParams = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("a", "Hi", "b", "There")),
+        new HashMap<>(Map.of("a", "Hi")),
+        new HashMap<>(Map.of("b", "There")),
+        new HashMap<>(Map.of("c", "meh")),
+        new HashMap<>(Map.of("a", "aaa", "ab", "nope", "b", "bbb", "c", "ccc")),
+        new HashMap<>(Map.of("ab", "nope", "b", "bbb", "c", "ccc"))
+    ));
+    List<Map<String, String>> mapABExepcted = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("a", "Hi", "ab", "HiThere", "b", "There")),
+        new HashMap<>(Map.of("a", "Hi")),
+        new HashMap<>(Map.of("b", "There")),
+        new HashMap<>(Map.of("c", "meh")),
+        new HashMap<>(Map.of("a", "aaa", "ab", "aaabbb", "b", "bbb", "c", "ccc")),
+        new HashMap<>(Map.of("ab", "nope", "b", "bbb", "c", "ccc"))
+    ));
+    System.out.println("\nRUNNING mapAB() TEST...");
+    for (int i = 0; i < mapABParams.size(); i++) {
+      String param = mapABParams.get(i).toString();
+      Map<String, String> expected = mapABExepcted.get(i);
+      Map<String, String> actual = map1.mapAB(mapABParams.get(i));
+      System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
+          param, expected.toString(), actual.toString());
+      assertEquals(actual, expected);
+    }
+  }
 }
