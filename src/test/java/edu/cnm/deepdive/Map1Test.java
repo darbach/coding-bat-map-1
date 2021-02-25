@@ -146,12 +146,44 @@ class Map1Test {
         new HashMap<>(Map.of("yogurt", "salt", "bread", "butter")),
         new HashMap<>(Map.of()),
         new HashMap<>(Map.of("yogurt", "air", "ice cream", "air", "salad", "oil"))
-        ));
+    ));
     System.out.println("\nRUNNING topping2() TEST...");
     for (int i = 0; i < topping2Params.size(); i++) {
       String param = topping2Params.get(i).toString();
       Map<String, String> expected = topping2Expected.get(i);
       Map<String, String> actual = map1.topping2(topping2Params.get(i));
+      System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
+          param, expected.toString(), actual.toString());
+      assertEquals(actual, expected);
+    }
+  }
+
+  @Test
+  void topping3() {
+    List<Map<String, String>> topping3Params = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("potato", "ketchup")),
+        new HashMap<>(Map.of("potato", "butter")),
+        new HashMap<>(Map.of("salad", "oil", "potato", "ketchup")),
+        new HashMap<>(Map.of("toast", "butter", "salad", "oil", "potato", "ketchup")),
+        new HashMap<>(Map.of()),
+        new HashMap<>(Map.of("salad", "pepper", "fries", "salt"))
+    ));
+    List<Map<String, String>> topping3Expected = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("potato", "ketchup", "fries", "ketchup")),
+        new HashMap<>(Map.of("potato", "butter", "fries", "butter")),
+        new HashMap<>(
+            Map.of("spinach", "oil", "salad", "oil", "potato", "ketchup", "fries", "ketchup")),
+        new HashMap<>(
+            Map.of("toast", "butter", "spinach", "oil", "salad", "oil", "potato", "ketchup",
+                "fries", "ketchup")),
+        new HashMap<>(Map.of()),
+        new HashMap<>(Map.of("spinach", "pepper", "salad", "pepper", "fries", "salt"))
+    ));
+    System.out.println("\nRUNNING topping3() TEST...");
+    for (int i = 0; i < topping3Params.size(); i++) {
+      String param = topping3Params.get(i).toString();
+      Map<String, String> expected = topping3Expected.get(i);
+      Map<String, String> actual = map1.topping3(topping3Params.get(i));
       System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
           param, expected.toString(), actual.toString());
       assertEquals(actual, expected);
