@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * CodingBat's first set of Java exercises for the Map class.
- *
+ * <p>
  * https://codingbat.com/java/Map-1
  *
  * @author Daniel Arbach
@@ -14,13 +14,13 @@ import java.util.Map;
 public class Map1 {
 
   /**
-   * Modify and return the given map as follows: if the key "a" has a value, set the key "b" to
-   * have that value, and set the key "a" to have the value "". Basically "b" is a bully, taking
-   * the value and replacing it with the empty string.
-   *
-   * mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
-   * mapBully({"a": "candy"}) → {"a": "", "b": "candy"}
-   * mapBully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b": "candy", "c": "meh"}
+   * Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have
+   * that value, and set the key "a" to have the value "". Basically "b" is a bully, taking the
+   * value and replacing it with the empty string.
+   * <p>
+   * mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"} mapBully({"a": "candy"}) →
+   * {"a": "", "b": "candy"} mapBully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b":
+   * "candy", "c": "meh"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -34,13 +34,12 @@ public class Map1 {
   }
 
   /**
-   * Modify and return the given map as follows: if the key "a" has a value, set the key "b"
-   * to have that same value. In all cases remove the key "c", leaving the rest of the map
-   * unchanged.
-   *
-   * mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"}
-   * mapShare({"b": "xyz", "c": "ccc"}) → {"b": "xyz"}
-   * mapShare({"a": "aaa", "c": "meh", "d": "hi"}) → {"a": "aaa", "b": "aaa", "d": "hi"}
+   * Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have
+   * that same value. In all cases remove the key "c", leaving the rest of the map unchanged.
+   * <p>
+   * mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"} mapShare({"b": "xyz",
+   * "c": "ccc"}) → {"b": "xyz"} mapShare({"a": "aaa", "c": "meh", "d": "hi"}) → {"a": "aaa", "b":
+   * "aaa", "d": "hi"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -54,13 +53,12 @@ public class Map1 {
   }
 
   /**
-   * Modify and return the given map as follows: for this problem the map may or may not contain
-   * the "a" and "b" keys. If both keys are present, append their 2 string values together and
-   * store the result under the key "ab".
-   *
-   * mapAB({"a": "Hi", "b": "There"}) → {"a": "Hi", "ab": "HiThere", "b": "There"}
-   * mapAB({"a": "Hi"}) → {"a": "Hi"}
-   * mapAB({"b": "There"}) → {"b": "There"}
+   * Modify and return the given map as follows: for this problem the map may or may not contain the
+   * "a" and "b" keys. If both keys are present, append their 2 string values together and store the
+   * result under the key "ab".
+   * <p>
+   * mapAB({"a": "Hi", "b": "There"}) → {"a": "Hi", "ab": "HiThere", "b": "There"} mapAB({"a":
+   * "Hi"}) → {"a": "Hi"} mapAB({"b": "There"}) → {"b": "There"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -73,13 +71,12 @@ public class Map1 {
   }
 
   /**
-   * Given a map of food keys and topping values, modify and return the map as follows: if the
-   * key "ice cream" is present, set its value to "cherry". In all cases, set the key "bread" to
-   * have the value "butter".
-   *
-   * topping1({"ice cream": "peanuts"}) → {"bread": "butter", "ice cream": "cherry"}
-   * topping1({}) → {"bread": "butter"}
-   * topping1({"pancake": "syrup"}) → {"bread": "butter", "pancake": "syrup"}
+   * Given a map of food keys and topping values, modify and return the map as follows: if the key
+   * "ice cream" is present, set its value to "cherry". In all cases, set the key "bread" to have
+   * the value "butter".
+   * <p>
+   * topping1({"ice cream": "peanuts"}) → {"bread": "butter", "ice cream": "cherry"} topping1({}) →
+   * {"bread": "butter"} topping1({"pancake": "syrup"}) → {"bread": "butter", "pancake": "syrup"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -93,13 +90,13 @@ public class Map1 {
   }
 
   /**
-   * Given a map of food keys and their topping values, modify and return the map as follows: if
-   * the key "ice cream" has a value, set that as the value for the key "yogurt" also. If the key
+   * Given a map of food keys and their topping values, modify and return the map as follows: if the
+   * key "ice cream" has a value, set that as the value for the key "yogurt" also. If the key
    * "spinach" has a value, change that value to "nuts".
-   *
+   * <p>
    * topping2({"ice cream": "cherry"}) → {"yogurt": "cherry", "ice cream": "cherry"}
-   * topping2({"spinach": "dirt", "ice cream": "cherry"}) → {"yogurt": "cherry", "spinach": "nuts", "ice cream": "cherry"}
-   * topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
+   * topping2({"spinach": "dirt", "ice cream": "cherry"}) → {"yogurt": "cherry", "spinach": "nuts",
+   * "ice cream": "cherry"} topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -115,13 +112,14 @@ public class Map1 {
   }
 
   /**
-   * Given a map of food keys and topping values, modify and return the map as follows: if the
-   * key "potato" has a value, set that as the value for the key "fries". If the key "salad"
-   * has a value, set that as the value for the key "spinach".
+   * Given a map of food keys and topping values, modify and return the map as follows: if the key
+   * "potato" has a value, set that as the value for the key "fries". If the key "salad" has a
+   * value, set that as the value for the key "spinach".
+   * <p>
+   * topping3({"potato": "ketchup"}) → {"potato": "ketchup", "fries": "ketchup"} topping3({"potato":
+   * "butter"}) → {"potato": "butter", "fries": "butter"} topping3({"salad": "oil", "potato":
+   * "ketchup"}) → {"spinach": "oil", "salad": "oil", "potato": "ketchup", "fries": "ketchup"}
    *
-   * topping3({"potato": "ketchup"}) → {"potato": "ketchup", "fries": "ketchup"}
-   * topping3({"potato": "butter"}) → {"potato": "butter", "fries": "butter"}
-   * topping3({"salad": "oil", "potato": "ketchup"}) → {"spinach": "oil", "salad": "oil", "potato": "ketchup", "fries": "ketchup"}
    * @param map A Map<String, String>
    * @return Modified map
    */
@@ -136,12 +134,12 @@ public class Map1 {
   }
 
   /**
-   * Modify and return the given map as follows: if the keys "a" and "b" are both in the map
-   * and have equal values, remove them both.
-   *
-   * mapAB2({"a": "aaa", "b": "aaa", "c": "cake"}) → {"c": "cake"}
-   * mapAB2({"a": "aaa", "b": "bbb"}) → {"a": "aaa", "b": "bbb"}
-   * mapAB2({"a": "aaa", "b": "bbb", "c": "aaa"}) → {"a": "aaa", "b": "bbb", "c": "aaa"}
+   * Modify and return the given map as follows: if the keys "a" and "b" are both in the map and
+   * have equal values, remove them both.
+   * <p>
+   * mapAB2({"a": "aaa", "b": "aaa", "c": "cake"}) → {"c": "cake"} mapAB2({"a": "aaa", "b": "bbb"})
+   * → {"a": "aaa", "b": "bbb"} mapAB2({"a": "aaa", "b": "bbb", "c": "aaa"}) → {"a": "aaa", "b":
+   * "bbb", "c": "aaa"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -156,12 +154,12 @@ public class Map1 {
   }
 
   /**
-   * Modify and return the given map as follows: if exactly one of the keys "a" or "b" has a
-   * value in the map (but not both), set the other to have that same value in the map.
-   *
-   * mapAB3({"a": "aaa", "c": "cake"}) → {"a": "aaa", "b": "aaa", "c": "cake"}
-   * mapAB3({"b": "bbb", "c": "cake"}) → {"a": "bbb", "b": "bbb", "c": "cake"}
-   * mapAB3({"a": "aaa", "b": "bbb", "c": "cake"}) → {"a": "aaa", "b": "bbb", "c": "cake"}
+   * Modify and return the given map as follows: if exactly one of the keys "a" or "b" has a value
+   * in the map (but not both), set the other to have that same value in the map.
+   * <p>
+   * mapAB3({"a": "aaa", "c": "cake"}) → {"a": "aaa", "b": "aaa", "c": "cake"} mapAB3({"b": "bbb",
+   * "c": "cake"}) → {"a": "bbb", "b": "bbb", "c": "cake"} mapAB3({"a": "aaa", "b": "bbb", "c":
+   * "cake"}) → {"a": "aaa", "b": "bbb", "c": "cake"}
    *
    * @param map A Map<String, String>
    * @return Modified map
@@ -172,6 +170,34 @@ public class Map1 {
         map.put("b", map.get("a"));
       } else {
         map.put("a", map.get("b"));
+      }
+    }
+    return map;
+  }
+
+  /**
+   * Modify and return the given map as follows: if the keys "a" and "b" have values that have
+   * different lengths, then set "c" to have the longer value. If the values exist and have the same
+   * length, change them both to the empty string in the map.
+   * <p>
+   * mapAB4({"a": "aaa", "b": "bb", "c": "cake"}) → {"a": "aaa", "b": "bb", "c": "aaa"} mapAB4({"a":
+   * "aa", "b": "bbb", "c": "cake"}) → {"a": "aa", "b": "bbb", "c": "bbb"} mapAB4({"a": "aa", "b":
+   * "bbb"}) → {"a": "aa", "b": "bbb", "c": "bbb"}
+   *
+   * @param map A Map<String, String>
+   * @return Modified map
+   */
+  public Map<String, String> mapAB4(Map<String, String> map) {
+    if (map.get("a") != null && map.get("b") != null) {
+      int lengthA = map.get("a").length();
+      int lengthB = map.get("b").length();
+      if (lengthA > lengthB) {
+        map.put("c", map.get("a"));
+      } else if (lengthB > lengthA) {
+        map.put("c", map.get("b"));
+      } else {
+        map.put("a", "");
+        map.put("b", "");
       }
     }
     return map;

@@ -236,7 +236,7 @@ class Map1Test {
         new HashMap<>(Map.of("b", "")),
         new HashMap<>(Map.of("a", "", "b", "")),
         new HashMap<>(Map.of("aa", "aa", "a", "apple", "z", "zzz"))
-        ));
+    ));
     List<Map<String, String>> mapAB3Expected = new ArrayList<>(Arrays.asList(
         //new HashMap<>(Map.of(
         new HashMap<>(Map.of("a", "aaa", "b", "aaa", "c", "cake")),
@@ -255,6 +255,53 @@ class Map1Test {
       String param = mapAB3Params.get(i).toString();
       Map<String, String> expected = mapAB3Expected.get(i);
       Map<String, String> actual = map1.mapAB3(mapAB3Params.get(i));
+      System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
+          param, expected.toString(), actual.toString());
+      assertEquals(actual, expected);
+    }
+  }
+
+  @Test
+  void mapAB4() {
+    List<Map<String, String>> mapAB4Params = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("a", "aaa", "b", "bb", "c", "cake")),
+        new HashMap<>(Map.of("a", "aa", "b", "bbb", "c", "cake")),
+        new HashMap<>(Map.of("a", "aa", "b", "bbb")),
+        new HashMap<>(Map.of("a", "aaa")),
+        new HashMap<>(Map.of("b", "bbb")),
+        new HashMap<>(Map.of("a", "aaa", "b", "bbb", "c", "cake")),
+        new HashMap<>(Map.of("a", "a", "b", "b", "c", "cake")),
+        new HashMap<>(Map.of("a", "", "b", "b", "c", "cake")),
+        new HashMap<>(Map.of("a", "a", "b", "", "c", "cake")),
+        new HashMap<>(Map.of("c", "cat", "d", "dog")),
+        new HashMap<>(Map.of("ccc", "ccc")),
+        new HashMap<>(Map.of("c", "a", "d", "b")),
+        new HashMap<>(Map.of()),
+        new HashMap<>(Map.of("a", "", "z", "z")),
+        new HashMap<>(Map.of("b", "", "z", "z"))
+    ));
+    List<Map<String, String>> mapAB4Expected = new ArrayList<>(Arrays.asList(
+        new HashMap<>(Map.of("a", "aaa", "b", "bb", "c", "aaa")),
+        new HashMap<>(Map.of("a", "aa", "b", "bbb", "c", "bbb")),
+        new HashMap<>(Map.of("a", "aa", "b", "bbb", "c", "bbb")),
+        new HashMap<>(Map.of("a", "aaa")),
+        new HashMap<>(Map.of("b", "bbb")),
+        new HashMap<>(Map.of("a", "", "b", "", "c", "cake")),
+        new HashMap<>(Map.of("a", "", "b", "", "c", "cake")),
+        new HashMap<>(Map.of("a", "", "b", "b", "c", "b")),
+        new HashMap<>(Map.of("a", "a", "b", "", "c", "a")),
+        new HashMap<>(Map.of("c", "cat", "d", "dog")),
+        new HashMap<>(Map.of("ccc", "ccc")),
+        new HashMap<>(Map.of("c", "a", "d", "b")),
+        new HashMap<>(Map.of()),
+        new HashMap<>(Map.of("a", "", "z", "z")),
+        new HashMap<>(Map.of("b", "", "z", "z"))
+    ));
+    System.out.println("\nRUNNING mapAB3() TEST...");
+    for (int i = 0; i < mapAB4Params.size(); i++) {
+      String param = mapAB4Params.get(i).toString();
+      Map<String, String> expected = mapAB4Expected.get(i);
+      Map<String, String> actual = map1.mapAB4(mapAB4Params.get(i));
       System.out.printf("PARAM, %s; EXPECTED, %s; ACTUAL %s%n",
           param, expected.toString(), actual.toString());
       assertEquals(actual, expected);
